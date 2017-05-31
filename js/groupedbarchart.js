@@ -94,7 +94,7 @@ d3.json("../output/Literacy_All_states_json.json", function (a, b) {
 		.attr("dy", ".75em")
 		.style("text-anchor", "end")
 		.text("Literate,Illiterate");
-	var j = svg2.selectAll(".legend")
+	var j=svg2.selectAll(".legend")
 		.data(color.domain()
 			.slice()
 			.reverse())

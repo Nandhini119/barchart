@@ -186,12 +186,12 @@ fs.readFile('data/India2011.csv', 'utf8', function (err, content) {
 		})
 	}
 	/*writing the output in to a json*/
-	fs.writeFileSync('output/Literacy_All_states_json.json', JSON.stringify(result_all_states), (err) => {
+	fs.writeFile('output/Literacy_All_states_json.json', JSON.stringify(result_all_states), (err) => {
 		if (err) throw err;
 	});
 	console.log('Done');
 });
-console.log(set1);
+
 module.exports = {
 	a: result,
 	b: result_north_east,
