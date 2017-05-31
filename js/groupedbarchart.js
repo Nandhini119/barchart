@@ -13,6 +13,7 @@ var horizontal = d3.scale.ordinal()
 	.rangeRound([height3, 0]);
 
 var color = d3.scale.category20();
+           
 
 var xaxis = d3.svg.axis()
 	.scale(horizontal)
@@ -93,7 +94,7 @@ d3.json("../output/Literacy_All_states_json.json", function (a, b) {
 		.attr("y", 5)
 		.attr("dy", ".75em")
 		.style("text-anchor", "end")
-		.text("Literate,Illiterate");
+		.text("Illiterate,Literate");
 	var j=svg2.selectAll(".legend")
 		.data(color.domain()
 			.slice()
