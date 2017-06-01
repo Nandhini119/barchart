@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "mocha unittestcase/test.spec.js",
+    "test": "mocha test/json/test.spec.js",
     "ui-tests": "mocha-phantomjs -R json --ssl-protocol=tlsv1 --ignore-ssl-errors=true index.html"
   },
   "repository": {

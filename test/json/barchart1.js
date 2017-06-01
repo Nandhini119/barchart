@@ -28,7 +28,7 @@ var svg = d3.select('#chart1')
 	.append('g')
 	.attr('transform', 'translate(' + margin1.left + ',' + margin1.top + ')');
 
-d3.json('../output/Literacy_Ratio_India_json.json', function (a, b) {
+d3.json('../../output/Literacy_Ratio_India_json.json', function (a, b) {
 	b.forEach(function (a) {
 		a.date = +a.date;
 		a.value = +a.value;

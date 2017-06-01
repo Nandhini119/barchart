@@ -1,13 +1,13 @@
 let chai = require('chai');
 let expect = chai.expect;
-let file_1 = require('../output/Literacy_All_states_json');
-let file_2 = require('../output/Literacy_Ratio_India_json');
-let file_3 = require('../output/Literacy_Ratio_NE_states_json');
+let file_1 = require('../../output/Literacy_All_states_json');
+let file_2 = require('../../output/Literacy_Ratio_India_json');
+let file_3 = require('../../output/Literacy_Ratio_NE_states_json');
 let json1 = require('../json/Literacy_All_states_json');
 let json2 = require('../json/Literacy_Ratio_India_json');
 let json3 = require('../json/Literacy_Ratio_NE_states_json');
-let jsondiff = require('../unittestcase/jsondiff.js');
-let index = require('../index.js');
+let jsondiff = require('../json/jsondiff.js');
+let index = require('../../index.js');
 describe('Test case for correct output', function () {
 	it('Test whether the type of output folder is object or not', function (done) {
 		expect(typeof file_1)

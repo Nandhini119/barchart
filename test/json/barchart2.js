@@ -28,7 +28,7 @@ var svg1 = d3.select('#chart2')
 	.append('g')
 	.attr('transform', 'translate(' + margin2.left + ',' + margin2.top + ')');
 
-d3.json('../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
+d3.json('../../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
 	b.forEach(function (a) {
 		a.date = +a.date;
 		a.value = +a.value;

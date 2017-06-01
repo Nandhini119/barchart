@@ -30,7 +30,7 @@ var svg2 = d3.select('#chart3')
 	.append('g')
 	.attr('transform', 'translate(' + margin3.left + ',' + margin3.top + ')');
 
-d3.json('../output/Literacy_All_states_json.json', function (a, b) {
+d3.json('../../output/Literacy_All_states_json.json', function (a, b) {
 	b.forEach(function (a) {
 		a.State_Name = a.State_Name;
 		a.Literate = a.Literate;
