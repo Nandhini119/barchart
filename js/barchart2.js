@@ -15,20 +15,20 @@ var y = d3.scale.linear()
 
 var xAxis2 = d3.svg.axis()
 	.scale(x)
-	.orient("bottom");
+	.orient('bottom');
 
 var yAxis2 = d3.svg.axis()
 	.scale(y)
-	.orient("left");
+	.orient('left');
 
-var svg1 = d3.select("#chart2")
-	.append("svg")
-	.attr("width", width2 + margin2.left + margin2.right)
-	.attr("height", height2 + margin2.top + margin2.bottom)
-	.append("g")
-	.attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+var svg1 = d3.select('#chart2')
+	.append('svg')
+	.attr('width', width2 + margin2.left + margin2.right)
+	.attr('height', height2 + margin2.top + margin2.bottom)
+	.append('g')
+	.attr('transform', 'translate(' + margin2.left + ',' + margin2.top + ')');
 
-d3.json("../output/Literacy_Ratio_NE_states_json.json", function (a, b) {
+d3.json('../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
 	b.forEach(function (a) {
 		a.date = +a.date;
 		a.value = +a.value;
@@ -39,45 +39,45 @@ d3.json("../output/Literacy_Ratio_NE_states_json.json", function (a, b) {
 			return a.value;
 		})]);
 	});
-	var c = svg1.append("g")
-		.attr("class", "x axis")
-		.attr("transform", "translate(0," + height2 + ")")
+	var c = svg1.append('g')
+		.attr('class', 'x axis')
+		.attr('transform', 'translate(0,' + height2 + ')')
 		.call(xAxis2)
-		.selectAll("text")
-		.style("text-anchor", "end")
-		.attr("dx", "3em")
-		.attr("dy", ".85em");
-	var d = svg1.append("g")
-		.attr("class", "y axis")
+		.selectAll('text')
+		.style('text-anchor', 'end')
+		.attr('dx', '3em')
+		.attr('dy', '.85em');
+	var d = svg1.append('g')
+		.attr('class', 'y axis')
 		.call(yAxis2)
-		.append("text")
-		.attr("transform", "rotate(-90)")
-		.attr("y", 5)
-		.attr("dy", ".75em")
-		.style("text-anchor", "end")
-		.text("Population");
-	var e = svg1.selectAll("bar")
+		.append('text')
+		.attr('transform', 'rotate(-90)')
+		.attr('y', 5)
+		.attr('dy', '.75em')
+		.style('text-anchor', 'end')
+		.text('Population');
+	var e = svg1.selectAll('bar')
 		.data(b)
 		.enter()
-		.append("rect")
-		.attr("class", "bar")
-		.attr("x", function (a) {
+		.append('rect')
+		.attr('class', 'bar')
+		.attr('x', function (a) {
 			return x(a.content);
 		})
-		.attr("width", 85)
-		.attr("y", function (a) {
+		.attr('width', 85)
+		.attr('y', function (a) {
 			return y(a.value);
 		})
-		.attr("height", function (a) {
+		.attr('height', function (a) {
 			return height2 - y(a.value);
 		});
-	var f = svg1.append("text")
-		.attr("x", width2 / 2)
-		.attr("y", 0 - margin2.top / 2)
-		.attr("margin.left", "20em")
-		.attr("dy", ".35em")
-		.attr("text-anchor", "middle")
-		.style("font-size", "16px")
-		.style("text-decoration", "underline")
-		.text("Ratio of male and female literate and illiterate of North Eastern States");
+	var f = svg1.append('text')
+		.attr('x', width2 / 2)
+		.attr('y', 0 - margin2.top / 2)
+		.attr('margin.left', '20em')
+		.attr('dy', '.35em')
+		.attr('text-anchor', 'middle')
+		.style('font-size', '16px')
+		.style('text-decoration', 'underline')
+		.text('Ratio of male and female literate and illiterate of North Eastern States');
 });
