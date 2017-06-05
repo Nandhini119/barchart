@@ -101,11 +101,11 @@ d3.json('../output/Literacy_All_states_json.json', function (a, b) {
 			return c[b];
 		});
 	let k = svg2.append('text')
-		.attr('x', width3 / 2)
-		.attr('y',  margin3.top / 2)
-		.attr('dy', '.35em')
-		.attr('text-anchor', 'middle')
-		.style('font-size', '16px')
-		.style('text-decoration', 'underline')
-		.text('Literate and Illiterate ratio of each states');
+	.attr('x', width3 / 2)
+	.attr('y', margin3.top / 2)
+	.attr('dy', '.35em')
+	.attr('text-anchor', 'middle')
+	.style('font-size', '16px')
+	.style('text-decoration', 'underline')
+	.text('Literate and Illiterate ratio of each states');
 });
