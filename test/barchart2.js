@@ -1,34 +1,27 @@
-var margin2 = {
-		top: 70,
-		right: 20,
-		bottom: 110,
-		left: 150
-	},
-	width2 = 700 - margin2.left - margin2.right,
-	height2 = 550 - margin2.top - margin2.bottom;
+let margin2 = {top: 70, right: 20, bottom: 110, left: 150}, width2 = 700 - margin2.left - margin2.right, height2 = 550 - margin2.top - margin2.bottom;
 
-var x = d3.scale.ordinal()
+let x = d3.scale.ordinal()
 	.rangeRoundBands([0, width2], .12);
 
-var y = d3.scale.linear()
+let y = d3.scale.linear()
 	.rangeRound([height2, 0]);
 
-var xAxis2 = d3.svg.axis()
+let xAxis2 = d3.svg.axis()
 	.scale(x)
 	.orient('bottom');
 
-var yAxis2 = d3.svg.axis()
+let yAxis2 = d3.svg.axis()
 	.scale(y)
 	.orient('left');
 
-var svg1 = d3.select('#chart2')
+let svg1 = d3.select('#chart2')
 	.append('svg')
 	.attr('width', width2 + margin2.left + margin2.right)
 	.attr('height', height2 + margin2.top + margin2.bottom)
 	.append('g')
 	.attr('transform', 'translate(' + margin2.left + ',' + margin2.top + ')');
 
-d3.json('../../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
+d3.json('../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
 	b.forEach(function (a) {
 		a.date = +a.date;
 		a.value = +a.value;
@@ -39,7 +32,7 @@ d3.json('../../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
 			return a.value;
 		})]);
 	});
-	var c = svg1.append('g')
+	let c = svg1.append('g')
 		.attr('class', 'x axis')
 		.attr('transform', 'translate(0,' + height2 + ')')
 		.call(xAxis2)
@@ -47,7 +40,7 @@ d3.json('../../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
 		.style('text-anchor', 'end')
 		.attr('dx', '3em')
 		.attr('dy', '.85em');
-	var d = svg1.append('g')
+	let d = svg1.append('g')
 		.attr('class', 'y axis')
 		.call(yAxis2)
 		.append('text')
@@ -56,7 +49,7 @@ d3.json('../../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
 		.attr('dy', '.75em')
 		.style('text-anchor', 'end')
 		.text('Population');
-	var e = svg1.selectAll('bar')
+	let e = svg1.selectAll('bar')
 		.data(b)
 		.enter()
 		.append('rect')
@@ -71,7 +64,7 @@ d3.json('../../output/Literacy_Ratio_NE_states_json.json', function (a, b) {
 		.attr('height', function (a) {
 			return height2 - y(a.value);
 		});
-	var f = svg1.append('text')
+	let f = svg1.append('text')
 		.attr('x', width2 / 2)
 		.attr('y', 0 - margin2.top / 2)
 		.attr('margin.left', '20em')

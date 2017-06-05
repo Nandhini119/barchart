@@ -1,5 +1,5 @@
 describe('the svg', function () {
-	var svg = document.getElementsByTagName('svg');
+	let svg = document.getElementsByTagName('svg');
 	it('svg creation', function () {
 		expect(svg.length)
 			.to.equal(3);
@@ -13,4 +13,4 @@ describe('the svg', function () {
 	    return d3.select('svg');
 	}
 
-})
+});
