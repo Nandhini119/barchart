@@ -42,37 +42,38 @@ d3.json('../test/json/ageWiseLiterateDistribution.json', function(error, data) {
                 .attr('dx', '-2em')
                 .attr('dy', '-.85em')
                 .attr('transform', 'rotate(-50)');
-                    svg.append('g')
-                    .attr('class', 'y axis')
-                    .call(yAxis1)
-                    .append('text')
-                    .attr('transform', 'rotate(-90)')
-                        .attr('y', 5)
-                        .attr('dy', '.75em')
-                        .style('text-anchor', 'end')
-                        .text('Population');
+                 svg.append('g')
+                 .attr('class', 'y axis')
+                 .call(yAxis1)
+                 .append('text')
+                 .attr('transform', 'rotate(-90)')
+                 .attr('y', 5)
+                 .attr('dy', '.75em')
+                 .style('text-anchor', 'end')
+                 .text('Population');
                         // Add bar chart
-                        svg.selectAll('bar')
-                        .data(data)
-                        .enter().append('rect')
-                        .attr('class', 'bar')
-                        .attr('x', function(d) {
-                            return x1(d.key);
-                        })
-                        .attr('width', 60)
-                        .attr('y', function(d) {
-                            return y1(d.value);
-                        })
-                        .attr('height', function(d) {
-                            return height1 - y1(d.value);
-                        });
-                        // Adding text to axis    
-                        svg.append('text')
-                        .attr('x', width / 2)
-                        .attr('y', 0 - margin1.top / 2)
-                        .attr('margin.left', '20em')
-                        .attr('dy', '.35em')
-                        .attr('text-anchor', 'middle')
-                        .style('font-size', '16px')
-                        .style('text-decoration', 'underline');
-                    });
+                  svg.selectAll('bar')
+                 .data(data)
+                 .enter().append('rect')
+                 .attr('class', 'bar')
+                 .attr('x', function(d) {
+                  return x1(d.key);
+                  })
+                 .attr('width', 60)
+                 .attr('y', function(d) {
+                  return y1(d.value);
+                  })
+                 .attr('height', function(d) {
+                  return height1 - y1(d.value);
+                  });
+                // Adding text to axis 
+                  svg.append('text')
+                 .attr('x', width / 2)
+                 .attr('y', 0 - margin1.top / 2)
+                 .attr('margin.left', '20em')
+                 .attr('dy', '.35em')
+                 .attr('text-anchor', 'middle')
+                 .style('font-size', '16px')
+                 .style('text-decoration', 'underline');
+                  });
+                  
