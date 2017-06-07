@@ -82,4 +82,3 @@ d3.json('../test/json/eduCategWise.json', function(error, data) {
                         .style('font-size', '16px')
                         .style('text-decoration', 'underline');
                     });
-            
